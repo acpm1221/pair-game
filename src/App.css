@@ -1,0 +1,172 @@
+/* Basic styles for the app */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  
+}
+
+
+
+h1 {
+  font-size: 2rem;
+}
+
+.config-panel {
+  margin-bottom: 20px;
+}
+
+label {
+  margin: 10px;
+}
+
+input {
+  margin-left: 10px;
+  padding: 5px;
+  width: 50px;
+}
+
+.attempts {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  margin: 20px;
+  justify-content: center;
+  transition: grid-template-columns 0.3s ease;
+}
+
+.word-tile {
+  background-color: lightgray;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.word-tile.matched {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+
+.word-tile.selected {
+  background-color: orange;
+  color: white;
+}
+
+.word-tile:hover {
+  opacity: 0.8;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+.reset-button:hover {
+  background-color: darkred;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large screens (desktops, tablets in landscape mode) */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+
+  .word-tile {
+    font-size: 20px; /* Slightly larger text on bigger screens */
+    height: 80px; /* Increase tile size */
+  }
+
+  .reset-button {
+    font-size: 1.3rem; /* Bigger reset button text */
+    padding: 15px 25px;
+  }
+
+  .config-panel input {
+    width: 60px; /* Larger input fields */
+  }
+}
+
+/* Medium screens (tablets in portrait mode, smaller laptops) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+
+  .word-tile {
+    font-size: 18px; /* Medium text size */
+    height: 70px;
+  }
+
+  .reset-button {
+    font-size: 1.2rem; /* Slightly larger reset button text */
+    padding: 12px 22px;
+  }
+
+  .config-panel input {
+    width: 55px; /* Medium input fields */
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+
+  .word-tile {
+    font-size: 16px; /* Smaller text size for small screens */
+    height: 60px;
+  }
+
+  .reset-button {
+    font-size: 1.1rem; /* Reset button text */
+    padding: 10px 20px;
+  }
+
+  .config-panel input {
+    width: 50px; /* Smaller input fields */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Reduce header font size */
+  }
+}
+
+/* Very small screens (extra small devices like older phones) */
+@media (max-width: 480px) {
+  .word-tile {
+    font-size: 14px; /* Even smaller text for very small screens */
+    height: 50px;
+  }
+
+  .reset-button {
+    font-size: 1rem; /* Smallest font size for reset button */
+    padding: 8px 16px;
+  }
+
+  .config-panel input {
+    width: 45px; /* Even smaller input fields */
+  }
+
+  h1 {
+    font-size: 1.2rem; /* Adjust header font size */
+  }
+}
